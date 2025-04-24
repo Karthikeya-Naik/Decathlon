@@ -180,7 +180,8 @@ useEffect(() => {
   setFilteredProducts(mockProducts);
   setActiveCategory('all');
 }, []);
-// Completely revised filter products function
+
+
 const filterProducts = (categoryId) => {
   console.log('Filtering by category:', categoryId);
   
