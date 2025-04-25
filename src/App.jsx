@@ -1502,22 +1502,20 @@ console.log('filteredProducts:', filteredProducts);
                 at affordable prices.
               </p>
               <div className="flex space-x-4 mt-6">
-                {['facebook', 'twitter', 'instagram', 'youtube'].map(
-                  (social) => (
-                    <a
-                      key={social}
-                      href="#"
-                      className="bg-gray-800 p-2 rounded-full hover:bg-blue-700 transition-colors duration-300"
-                    >
-                      <img
-                        src={`src/assets/${social}.svg`}
-                        alt={social}
-                        className="h-5 w-5"
-                      />
-                    </a>
-                  )
-                )}
-              </div>
+  {['facebook', 'twitter', 'instagram', 'youtube'].map((social) => (
+    <a
+      key={social}
+      href="#"
+      className="bg-gray-200 p-2 rounded-full hover:bg-blue-700 transition-colors duration-300"
+    >
+      <img
+        src={socialIcons[social]}
+        alt={social}
+        className="h-5 w-5"
+      />
+    </a>
+  ))}
+</div>
             </div>
 
             <div>
