@@ -1,7 +1,30 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Heart, ShoppingCart, Search, Star, User, Menu, X } from 'lucide-react';
-
+import img1 from './assets/1.png';
+import img2 from './assets/2.png';
+import img3 from './assets/3.png';
+import img4 from './assets/4.png';
+import img5 from './assets/5.png';
+import img6 from './assets/6.png';
+import img7 from './assets/7.png';
+import img8 from './assets/8.png';
+import img9 from './assets/9.png';
+import img10 from './assets/10.png';
+import img11 from './assets/11.png';
+import img12 from './assets/12.png';
+import img13 from './assets/13.png';
+import img14 from './assets/14.png';
+import img15 from './assets/15.png';
+import img16 from './assets/16.png';
+import img17 from './assets/17.png';
+import img18 from './assets/18.png';
+import hero from './assets/hero.png';
+import team1 from './assets/team1.jpg';
+import team2 from './assets/team2.avif';
+import team3 from './assets/team3.webp';
+import playstore from './assets/playstore.png';
+import appstore from './assets/appstore.png';
 function App() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -58,7 +81,7 @@ const [sortBy, setSortBy] = useState("featured");
         category: 'shoes',
         price: 79.99,
         rating: 4.5,
-        imageUrl: 'src/assets/1.png',
+        imageUrl: img1,
         description: 'Premium running shoes with enhanced cushioning and support for professional athletes.',
       },
       {
@@ -67,7 +90,7 @@ const [sortBy, setSortBy] = useState("featured");
         category: 'men',
         price: 29.99,
         rating: 4.2,
-        imageUrl: 'src/assets/2.png',
+        imageUrl: img2,
         description: 'Comfortable training shorts with moisture-wicking fabric, perfect for intense workouts.',
       },
       {
@@ -76,7 +99,7 @@ const [sortBy, setSortBy] = useState("featured");
         category: 'fitness',
         price: 24.99,
         rating: 4.8,
-        imageUrl: 'src/assets/3.png',
+        imageUrl:img3,
         description: 'Non-slip yoga mat with extra padding for comfort during your practice.',
       },
       {
@@ -85,7 +108,7 @@ const [sortBy, setSortBy] = useState("featured");
         category: 'cycles',
         price: 499.99,
         rating: 4.7,
-        imageUrl: 'src/assets/4.png',
+        imageUrl: img4,
         description: 'Durable mountain bike with aluminum frame and 21-speed gear system.',
       },
       {
@@ -94,7 +117,7 @@ const [sortBy, setSortBy] = useState("featured");
         category: 'bags',
         price: 39.99,
         rating: 4.3,
-        imageUrl: 'src/assets/5.png',
+        imageUrl: img5,
         description: 'Spacious backpack with multiple compartments, perfect for gym or travel.',
       },
       {
@@ -103,7 +126,7 @@ const [sortBy, setSortBy] = useState("featured");
         category: 'fitness',
         price: 89.99,
         rating: 4.6,
-        imageUrl: 'src/assets/6.png',
+        imageUrl: img6,
         description: 'Professional-grade tennis racket with balanced weight distribution for better control.',
       },
       {
@@ -112,7 +135,7 @@ const [sortBy, setSortBy] = useState("featured");
         category: 'women',
         price: 34.99,
         rating: 4.4,
-        imageUrl: 'src/assets/7.png',
+        imageUrl: img7,
         description: 'High-waisted leggings with pocket, perfect for running and gym workouts.',
       },
       {
@@ -121,7 +144,7 @@ const [sortBy, setSortBy] = useState("featured");
         category: 'kids',
         price: 19.99,
         rating: 4.1,
-        imageUrl: 'src/assets/8.png',
+        imageUrl: img8,
         description: 'Durable football sized for kids, with bright colors for better visibility.',
       },
       {
@@ -130,7 +153,7 @@ const [sortBy, setSortBy] = useState("featured");
         category: 'fitness',
         price: 59.99,
         rating: 4.5,
-        imageUrl: 'src/assets/9.png',
+        imageUrl: img9,
         description: 'Smart fitness tracker with heart rate monitoring and sleep analysis.',
       },
       {
@@ -139,7 +162,7 @@ const [sortBy, setSortBy] = useState("featured");
         category: 'cycles',
         price: 49.99,
         rating: 4.9,
-        imageUrl: 'src/assets/10.png',
+        imageUrl: img10,
         description: 'Lightweight cycling helmet with adjustable fit and ventilation system.',
       },
       {
@@ -148,7 +171,7 @@ const [sortBy, setSortBy] = useState("featured");
         category: 'shoes',
         price: 69.99,
         rating: 4.3,
-        imageUrl: 'src/assets/11.png',
+        imageUrl: img11,
         description: 'Versatile training shoes for women with extra support and cushioning.',
       },
       {
@@ -157,7 +180,7 @@ const [sortBy, setSortBy] = useState("featured");
         category: 'kids',
         price: 14.99,
         rating: 4.2,
-        imageUrl: 'src/assets/12.png',
+        imageUrl: img12,
         description: 'Comfortable swim goggles with anti-fog coating, designed for children.',
       },
     ];
@@ -388,7 +411,7 @@ console.log('filteredProducts:', filteredProducts);
       <section className="relative w-full">
         <div
           className="h-96 md:h-screen bg-cover bg-center relative w-full"
-          style={{ backgroundImage: 'url("src/assets/hero.png")' }}
+          style={{ backgroundImage: `url(${hero})` }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-blue-900/100 flex items-center w-full">
             <div className="container mx-auto px-6 max-w-screen-xl">
@@ -654,7 +677,7 @@ console.log('filteredProducts:', filteredProducts);
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: 'spring', damping: 25 }}
-            className="bg-white rounded-2xl overflow-hidden max-w-4xl w-full max-h-[90vh] shadow-2xl"
+            className="bg-white rounded-2xl overflow-hidden max-w-4xl w-[60vw] max-h-[90vh] shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex flex-col md:flex-row">
@@ -921,7 +944,7 @@ console.log('filteredProducts:', filteredProducts);
             className="rounded-lg overflow-hidden shadow-lg h-64"
           >
             <img
-              src="src/assets/13.png"
+              src={img13}
               alt="Team"
               className="w-full h-64 object-cover"
             />
@@ -931,7 +954,7 @@ console.log('filteredProducts:', filteredProducts);
             className="rounded-lg overflow-hidden shadow-lg mt-8"
           >
             <img
-              src="src/assets/15.png"
+              src={img15}
               alt="Store"
               className="w-full h-64 object-cover"
             />
@@ -941,7 +964,7 @@ console.log('filteredProducts:', filteredProducts);
             className="rounded-lg overflow-hidden shadow-lg -mt-4 h-64"
           >
             <img
-              src="src/assets/14.png"
+              src={img14}
               alt="Products"
               className="w-full h-64 object-cover"
             />
@@ -951,7 +974,7 @@ console.log('filteredProducts:', filteredProducts);
             className="rounded-lg overflow-hidden shadow-lg mt-4"
           >
             <img
-              src="src/assets/4.png"
+              src={img4}
               alt="Sports"
               className="w-full h-64 object-cover"
             />
@@ -1109,21 +1132,21 @@ console.log('filteredProducts:', filteredProducts);
               {
                 name: 'Sarah Johnson',
                 role: 'Professional Runner',
-                image: 'src/assets/team4.webp',
+                image: team1,
                 quote:
                   "The Pro Runner Shoes changed my training routine completely. The cushioning and support are unparalleled. I've improved my timing significantly!",
               },
               {
                 name: 'Michael Chen',
                 role: 'Cycling Enthusiast',
-                image: 'src/assets/team3.avif',
+                image: team2,
                 quote:
                   "I've been using Decathlon's Mountain Bike for over a year now, and it's by far the best investment I've made. Durable, reliable, and great value for money.",
               },
               {
                 name: 'Priya Sharma',
                 role: 'Yoga Instructor',
-                image: 'src/assets/team2.jpg',
+                image: team3,
                 quote:
                   "The quality of Decathlon's yoga mats is exceptional. My students always ask where I got mine from. The grip and padding are perfect for all yoga styles.",
               },
@@ -1324,21 +1347,21 @@ console.log('filteredProducts:', filteredProducts);
                 title: 'City Marathon 2025',
                 date: 'May 15, 2025',
                 location: 'Central Park',
-                image: 'src/assets/16.png',
+                image: img16,
                 category: 'Running',
               },
               {
                 title: 'Mountain Biking Championship',
                 date: 'June 10, 2025',
                 location: 'Rocky Trails',
-                image: 'src/assets/17.png',
+                image: img17,
                 category: 'Cycling',
               },
               {
                 title: 'Beach Volleyball Tournament',
                 date: 'July 5, 2025',
                 location: 'Sunny Beach',
-                image: 'src/assets/18.png',
+                image: img18,
                 category: 'Volleyball',
               },
             ].map((event, index) => (
@@ -1602,21 +1625,21 @@ console.log('filteredProducts:', filteredProducts);
                 <h4 className="text-sm font-semibold mb-3">Download Our App</h4>
                 <div className="flex space-x-3">
                   <a
-                    href="#"
+                    href="https://apps.apple.com/in/app/decathlon-online-shopping-app/id1387810949"
                     className="bg-gray-800 p-2 rounded-lg hover:bg-gray-700 transition-colors duration-300"
                   >
                     <img
-                      src="src/assets/app-store.png"
+                      src={appstore}
                       alt="App Store"
                       className="h-8"
                     />
                   </a>
                   <a
-                    href="#"
+                    href="https://play.google.com/store/search?q=decathlon&c=apps&hl=en"
                     className="bg-gray-800 p-2 rounded-lg hover:bg-gray-700 transition-colors duration-300"
                   >
                     <img
-                      src="src/assets/play-store.png"
+                      src={playstore}
                       alt="Play Store"
                       className="h-8"
                     />
