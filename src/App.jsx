@@ -25,6 +25,14 @@ import team2 from './assets/team2.avif';
 import team3 from './assets/team3.webp';
 import playstore from './assets/playstore.png';
 import appstore from './assets/appstore.png';
+import facebook from './assets/facebook.svg';
+import instagram from './assets/instagram.svg';
+import mastercard from './assets/mastercard.svg';
+import amex from './assets/amex.svg';
+import paypal from './assets/paypal.svg';
+import twitter from './assets/twitter.svg';
+import visa from './assets/visa.svg';
+import youtube from './assets/youtube.svg';
 function App() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -47,6 +55,18 @@ const [sortBy, setSortBy] = useState("featured");
     { id: 'bags', name: 'Bags' },
     { id: 'fitness', name: 'Fitness' },
   ];
+  const paymentLogos = {
+    visa,
+    mastercard,
+    amex,
+    paypal,
+  };
+  const socialIcons = {
+    facebook,
+    twitter,
+    instagram,
+    youtube,
+  };
 
   // Modified button click handler
   const handleExploreNow = () => {
@@ -1298,24 +1318,22 @@ console.log('filteredProducts:', filteredProducts);
                   <h4 className="font-semibold text-blue-900 mb-3">
                     Also follow us on:
                   </h4>
-                  <div className="flex justify-center md:justify-start space-x-4">
-                    {['facebook', 'twitter', 'instagram', 'youtube'].map(
-                      (social) => (
-                        <motion.a
-                          key={social}
-                          whileHover={{ scale: 1.2, rotate: 5 }}
-                          className="bg-gray-100 p-2 rounded-full hover:bg-blue-100 transition-colors duration-300"
-                          href="#"
-                        >
-                          <img
-                            src={`src/assets/${social}.svg`}
-                            alt={social}
-                            className="h-6 w-6"
-                          />
-                        </motion.a>
-                      )
-                    )}
-                  </div>
+                  <div className="flex space-x-4 mt-6">
+  {['facebook', 'twitter', 'instagram', 'youtube'].map((social) => (
+    <a
+      key={social}
+      href="#"
+      className="bg-gray-200 p-2 rounded-full hover:bg-blue-700 transition-colors duration-300"
+    >
+      <img
+        src={socialIcons[social]}
+        alt={social}
+        className="h-5 w-5"
+      />
+    </a>
+  ))}
+</div>
+
                 </div>
               </div>
             </motion.div>
@@ -1681,19 +1699,17 @@ console.log('filteredProducts:', filteredProducts);
                   Payment Methods:
                 </span>
                 <div className="flex space-x-2">
-                  {['visa', 'mastercard', 'amex', 'paypal'].map((payment) => (
-                    <div
-                      key={payment}
-                      className="bg-gray-800 p-1 rounded"
-                    >
-                      <img
-                        src={`src/assets/${payment}.svg`}
-                        alt={payment}
-                        className="h-6"
-                      />
-                    </div>
-                  ))}
-                </div>
+  {['visa', 'mastercard', 'amex', 'paypal'].map((payment) => (
+    <div key={payment} className="bg-gray-800 p-1 rounded">
+      <img
+        src={paymentLogos[payment]} // use the mapping object
+        alt={payment}
+        className="h-6"
+      />
+    </div>
+  ))}
+</div>
+
               </div>
             </div>
           </div>
