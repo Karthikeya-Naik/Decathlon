@@ -222,35 +222,31 @@ const [sortBy, setSortBy] = useState("featured");
   //   }
   // }, [activeCategory, products]);
   
-  // Filter function to replace the current implementation
-const filterProducts = (category) => {
-  setActiveCategory(category);
-};
   // Toggle wishlist
   const toggleWishlist = (productId) => {
     setWishlist((prev) =>
       prev.includes(productId)
-        ? prev.filter((id) => id !== productId)
-        : [...prev, productId]
-    );
-  };
+    ? prev.filter((id) => id !== productId)
+    : [...prev, productId]
+  );
+};
 
-  // Open product view
-  const openProductView = (product) => {
-    setCurrentProductView(product);
-  };
+// Open product view
+const openProductView = (product) => {
+  setCurrentProductView(product);
+};
 
-  // Close product view
-  const closeProductView = () => {
-    setCurrentProductView(null);
-  };
+// Close product view
+const closeProductView = () => {
+  setCurrentProductView(null);
+};
 
-  // Animation variants
-  const fadeInUp = {
+// Animation variants
+const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
-
+  
   const staggerContainer = {
     hidden: { opacity: 0 },
     visible: {
@@ -260,17 +256,25 @@ const filterProducts = (category) => {
       },
     },
   };
-
+  
   const handlePriceChange = (newRange) => {
     setPriceRange(newRange);
   };
-
-useEffect(() => {
-  let result = [...products];
+  
+  // Filter function to replace the current implementation
+  const filterProducts = (category) => {
+  setActiveCategory(category);
+  setPriceRange([0, 500]); // Reset to full price range
+  setSelectedRating(0); // Reset rating filter
+  setSortBy('featured'); // Reset sorting to default
+  };
+  useEffect(() => {
+    console.log('Filtering with:', { activeCategory, priceRange, selectedRating, sortBy });
+    let result = [...products];
   
   // Category filter
   if (activeCategory !== 'all') {
-    result = result.filter(product => product.category === activeCategory);
+    result = result.filter(product => product.category.toLowerCase() === activeCategory.toLowerCase());
   }
   
   // Price filter
@@ -298,12 +302,13 @@ useEffect(() => {
       // 'featured' - no specific sorting
       break;
   }
-  
+  console.log('Filtered products:', result);
   setFilteredProducts(result);
 }, [activeCategory, products, priceRange, selectedRating, sortBy]);
-
-console.log('filteredProducts:', filteredProducts);
-
+useEffect(() => {
+  const uniqueCategories = [...new Set(products.map(p => p.category))];
+  console.log('Product categories:', uniqueCategories);
+}, [products]);
   return (
     <div className="bg-gray-50 min-h-screen w-full">
       {/* Navigation */}
@@ -540,20 +545,22 @@ console.log('filteredProducts:', filteredProducts);
 </div>
           {/* Products Display */}
           <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="relative"
+            // Remove staggerContainer to simplify
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.5 }}
+  className="relative"
           >
+            {console.log('Rendering filteredProducts:', filteredProducts)}
             {filteredProducts.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
                 {filteredProducts.map((product) => (
                   <motion.div
-                    key={product.id}
-                    variants={fadeInUp}
-                    // whileHover={{ y: -10 }}
-                    className="group relative"
+                  key={product.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="group relative"
                   >
                     <div className="relative overflow-hidden rounded-xl bg-white shadow-lg">
                       <div className="aspect-square overflow-hidden">
@@ -666,7 +673,10 @@ console.log('filteredProducts:', filteredProducts);
                 ))}
               </div>
             ) : (
-              <motion.div variants={fadeInUp} className="text-center py-16">
+              <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-center py-16">
                 <h3 className="text-xl text-gray-600">
                   No products found in this category.
                 </h3>
