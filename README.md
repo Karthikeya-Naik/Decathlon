@@ -1,12 +1,66 @@
-# React + Vite
+# 🏬 Decathlon Sports Store – React Single Page App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive **React-based single-page application** inspired by **Decathlon**. This lightweight e-commerce demo showcases sports gear with animated UI, filtering, wishlist, and clean visuals — all in a single React file.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Demo Preview
 
-## Expanding the ESLint configuration
+This is a fully functional, responsive front-end prototype.  
+https://decathlon-ebon.vercel.app/
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Features
+
+- 🛒 **Product Catalog** – Browse a variety of sports equipment, apparel, and accessories  
+- 🧢 **Category Filtering** – Filter by Men, Women, Kids, Shoes, Cycles, Bags, Fitness  
+- 💖 **Wishlist** – Save favorite products (stored in `localStorage`)  
+- 🔎 **Search & Sort** – Search bar and sort by price/rating  
+- 👀 **Product Preview Modal** – View product details in a popup  
+- 🎞️ **Framer Motion UI** – Smooth component animations  
+- 📱 **Responsive Design** – Works across mobile, tablet, and desktop  
+- 📩 **Newsletter Signup**  
+- 👥 **Team Section** and 💬 **Testimonials Section**  
+- 📱 **Social Media Links** and 💳 **Payment Method Icons**
+
+---
+## 🛠️ Tech Stack
+- React 18 – Single-page application logic
+- Framer Motion – Smooth UI animation
+- Lucide React – Clean, open-source icon set
+- CSS3 – Styling and responsiveness
+- LocalStorage – Persist wishlist state
+
+---
+🧾 Project Structure
+```
+decathlon/
+├── public/
+│   └── index.html
+├── src/
+│   ├── App.jsx           # Main single file React app
+│   ├── assets/           # All product images and icons
+│   └── index.js          # Entry point
+├── package.json
+└── README.md
+```
+---
+## 🧠 Customization
+- 🏷️ Add/Remove Products – Modify the product array inside App.jsx
+- 🎨 Change Categories – Update category list directly in the code
+- 🖼️ Replace Assets – Use your own images in src/assets/
+
+---
+🔐 License
+This is a learning/demo project and not intended for production or commercial use.
+All product names and branding references to "Decathlon" are for educational inspiration only.
+---
+📩 Contact
+For feedback, ideas, or issues —
+Open a GitHub issue
+---
+🙌 Credits
+- Built with ❤️ using React + Framer Motion
+- Icons by Lucide
+- Inspired by the shopping experience at Decathlon
