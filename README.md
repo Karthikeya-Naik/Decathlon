@@ -58,12 +58,12 @@ This is a learning/demo project and not intended for production or commercial us
 All product names and branding references to "Decathlon" are for educational inspiration only.
 
 ---
-📩 Contact
+## 📩 Contact
 For feedback, ideas, or issues —
 Open a GitHub issue
 
 ---
-🙌 Credits
+## 🙌 Credits
 - Built with ❤️ using React + Framer Motion
 - Icons by Lucide
 - Inspired by the shopping experience at Decathlon
