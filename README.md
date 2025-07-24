@@ -1,4 +1,4 @@
-# 🏬 Decathlon Sports Store – React Single Page App
+# 🏬 Decathlon Sports Store – React Single Page Site
 
 A modern and responsive **React-based single-page application** inspired by **Decathlon**. This lightweight e-commerce demo showcases sports gear with animated UI, filtering, wishlist, and clean visuals — all in a single React file.
 
@@ -52,13 +52,16 @@ decathlon/
 - 🖼️ Replace Assets – Use your own images in src/assets/
 
 ---
-🔐 License
+## 🔐 License
+
 This is a learning/demo project and not intended for production or commercial use.
 All product names and branding references to "Decathlon" are for educational inspiration only.
+
 ---
 📩 Contact
 For feedback, ideas, or issues —
 Open a GitHub issue
+
 ---
 🙌 Credits
 - Built with ❤️ using React + Framer Motion
