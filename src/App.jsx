@@ -678,7 +678,7 @@ useEffect(() => {
               animate={{ opacity: 1 }}
               className="text-center py-16">
                 <h3 className="text-xl text-gray-600">
-                  No products found in this category.
+                  No products found in this category
                 </h3>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
